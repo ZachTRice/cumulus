@@ -14,6 +14,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 - Fixed bug with request headers in `@cumulus/launchpad-auth` causing Launchpad token requests to fail
 
+- **CUMULUS-1955**
+  - Due to AWS's eventual consistency model, it was possible for PostToCMR to
+    publish an earlier version of a CMR metadata file, rather than the latest
+    version created by the MoveGranules task.  This fix guarantees that the
+    latest version is published, as expected.
+
 
 ## [v2.0.0] 2020-07-23
 
